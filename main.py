@@ -5,12 +5,9 @@ DEFAULT_FILENAME = "words.txt"
 DEFAULT_DUPLICATES = False
 DEFAULT_ORDER_ASC = True
 
-<<<<<<< new-order-parameter
 
 def sort_list(items, ascending):
-=======
 def sort_list(items, ascending=True):
->>>>>>> main
     if not isinstance(items, list):
         raise RuntimeError(f"No puede ordenar {type(items)}")
     return sorted(items, reverse=(not ascending))
@@ -27,12 +24,12 @@ if __name__ == "__main__":
         remove_duplicates = sys.argv[2].lower() == "yes"
         ascending_order = False if sys.argv[3] == "desc" else DEFAULT_ORDER_ASC
     else:
-        print("Se debe indicar el fichero como primer argumento")
-        print("El segundo argumento indica si se quieren eliminar duplicados")
-        print("El tercer argumento indica si el tipo de ordenamiento (ascendente o descendente)")
+        print("The file must be indicated as the first argumen")
+        print("The second argument indicates whether you want to eliminate duplicates")
+        print("The third argument indicates whether the type of sorting (ascending or descending)")
         sys.exit(1)
 
-    print(f"Se leerán las palabras del fichero {filename}")
+    print(f"The words from the file will be read {filename}")
     file_path = os.path.join(".", filename)
     try:
         with open(file_path, "r") as file:
